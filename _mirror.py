@@ -21,7 +21,14 @@ PAGES = ["/"] + [
 UA = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36"}
 
 # CSS injected into every page: undo Squarespace's JS-dependent lazy-load hiding
-FIX_CSS = ("<style id='selfhost-fix'>"
+FIX_CSS = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
+ '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
+ '<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">'
+ '<style id="font-override">'
+ "body, body *:not(i):not([class*='icon']):not([class*='Icon']):not([class*='fa-'])"
+ "{font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif !important}"
+ '</style>'
+ "<style id='selfhost-fix'>"
  "img{opacity:1 !important;visibility:visible !important;filter:none !important}"
  ".sqs-image,.image-block-wrapper,.intrinsic,.summary-thumbnail-container,"
  ".sqs-image-content,[data-load]{opacity:1 !important;visibility:visible !important}"
